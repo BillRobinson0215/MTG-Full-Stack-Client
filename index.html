@@ -6,12 +6,40 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- <link rel="stylesheet" href="/styles/index.css"> -->
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+          <nav class="out-nav" style="float: right;">
+            <form class="out" id="sign-out-form">
+              <h3 class="title">Sign Out</h3>
+              <button class="navbutton">Sign Out</button>
+            </form>
+          </nav>
       <h1>Browser Template</h1>
+
+     <!-- <div class="modal-bg">
+        <div class="modal">
+            <h3 class="title">Sign Up</h3>
+            <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+            <input type="password" name="credentials[password]" placeholder="Create Password" />
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+            <button class="navbutton">Submit</button>
+            <h3 class="title">Sign In</h3>
+            <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+            <input type="password" name="credentials[password]" placeholder="Password" />
+            <button class="navbutton">Submit</button>
+        </div>
+     </div> -->
+        <form class="in" id="sign-in-form">
+          <h3 class="title">Card Search</h3>
+          <input type="name" placeholder="'Squee, Goblin Nabob'" />
+          <button class="navbutton">Search Card</button>
+        </form>
+        <p class="message">These are Cards</p>
+        <p>this is a collection</p>
     </body>
 </html>
