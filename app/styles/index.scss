@@ -1,4 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Montserrat:wght@100;300;400;600;700&family=Press+Start+2P&family=Satisfy&family=Yellowtail&display=swap');
 
+$font-family: 'Montserrat';
+$font-color: rgb(255, 213, 0);
+
+
+body {
+    font-family: $font-family;
+    color: $font-color;
+    // background-color: rgb(46, 46, 46);
+}
+
+button {
+    background-color: grey;
+    font-family: $font-family;
+    font-weight: 300;
+    color: $font-color; 
+}
+
+form {
+    padding: 5px;
+    align-content: left;
+    justify-content: left;
+}
+
+h3 {
+    margin-bottom: 10px;
+    margin-top: -3px;
+}
+
+html {
+    background-image: url("https://pbs.twimg.com/media/FCyxBdVUYAArYQv?format=jpg&name=large"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input {
+    background-color: black;
+    font-family: $font-family;
+    color: rgb(255, 255, 255);
+    width: 150px;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 125px;
+    font-size: 45px;
+    font-weight: 700;
+}
 .modal-bg {
     position: fixed;
     width: 100%;
@@ -11,20 +61,100 @@
     align-items: center;
 }
 
+.modal-cp {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .modal {
-    background-color: burlywood;
-    width: 25%;
-    height: 45%;
+    background-color: rgb(0, 17, 84);
+    width: 30%;
+    height: 43%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: groove;
+    border-color: $font-color;
+    border-width: 2px;
+    font-size: 25px;
+}
+
+.cp-modal {
+    background-color: rgb(0, 17, 84);
+    width: 30%;
+    height: 26%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: groove;
+    border-color: $font-color;
+    border-width: 2px;
+    font-size: 25px;
+}
+
+.in {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+.modal {
+    padding: 10px 15px;
+    background-color: rgb(0, 17, 84);
+    color: $font-color;
+    font-family: $font-family;
+}
 
-.modal button{
-    padding: 10px 30px;
-    background-color: #2980b9;
-    color: black;
-    border: none;
+.addCard {
+    margin-top: 10px;
+}
+
+.card {
+    width: 300px;
+    background-color: rgba(0,0,0,0.5 );
+    padding: 15px;
+    list-style-type: none;
+}
+
+.card-list .title {
+    font-weight: 400;
+}
+.collection {
+    position: absolute;
+    width: 600px;
+    padding: 15px;
+    right: 25%;
+    left: 30%;
+    top: 237px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgba(0,0,0,0.5 );
+}
+
+#addCard {
+    margin-top: 10px;
+}
+
+.navbutton {
+    background-color: grey;
+    font-family: $font-family;
+    font-weight: 300;
+    color: $font-color; 
+    margin: 10px 0px 3px 0px;
+}
+
+.input {
+    width: 200px;
 }

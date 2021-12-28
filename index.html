@@ -18,28 +18,59 @@
               <h3 class="title">Sign Out</h3>
               <button class="navbutton">Sign Out</button>
             </form>
+            <button id="cp-show">Change Password</button>
+            <div class="modal-cp" style="display: none;">
+              <div class="cp-modal">
+              <form class="in" id="change-password-form">
+                <h3 id="title">Change Password</h3>
+                <input class="input" type="password" name="credentials[old]" placeholder="Old Password" />
+                <input class="input" type="password" name="credentials[new]" placeholder="New Password" />
+                <button class="navbutton" id="change-password">Change Password</button>
+                <button id="cp-done">Done</button>
+              </form>
+              </div>
+            </div>
           </nav>
-      <h1>Browser Template</h1>
+      <h1 class="heading">TCG Collector</h1>
 
-     <!-- <div class="modal-bg">
+     <div class="modal-bg">
         <div class="modal">
+          <form class="in" id="sign-up-form">
             <h3 class="title">Sign Up</h3>
-            <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
-            <input type="password" name="credentials[password]" placeholder="Create Password" />
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
-            <button class="navbutton">Submit</button>
-            <h3 class="title">Sign In</h3>
-            <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
-            <input type="password" name="credentials[password]" placeholder="Password" />
-            <button class="navbutton">Submit</button>
-        </div>
-     </div> -->
-        <form class="in" id="sign-in-form">
+            <input class="input"  type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+            <input class="input" type="password" name="credentials[password]" placeholder="Create Password" />
+            <input class="input" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+            <button class="navbutton">Sign-Up</button>
+          </form>
+            <form class="in" id="sign-in-form">
+      <h3 class="title">Sign In</h3>
+      <input class="input" type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+      <input class="input" type="password" name="credentials[password]" placeholder="Password" />
+      <button class="navbutton">Sign-in</button>
+    </form>
+  </div>
+</div>
+      <div id="cardSearch">
+        <form>
           <h3 class="title">Card Search</h3>
-          <input type="name" placeholder="'Squee, Goblin Nabob'" />
-          <button class="navbutton">Search Card</button>
+          <input id="cardName" type="name" placeholder="'Squee, Goblin Nabob'"/>
+          <button>Search Card</button>
         </form>
-        <p class="message">These are Cards</p>
-        <p>this is a collection</p>
+      <div>
+        <p class="card-list">Search Result<ul class="card" style="display: none;"></ul></p>
+        </div>
+        <div>
+        <p class="collection" style="display: none;">this is a collection If you see an error message, post it here. If you don't, what unexpected behavior are you seeing?
+        no error being received
+        
+        What is your best guess as to the source of the problem?
+        I believe the issue is that I am not assigning the owner at time of creation.
+        
+        What things have you already tried to solve the problem?
+        I tried deleting my original DB (that was no longer in use) to ensure that the DB was not still getting called for some
+        functions. creating new users in the client and postman as well as new collections in postman to get a collection with a
+        different user.</p>
+        </div>
+      </div>
     </body>
 </html>

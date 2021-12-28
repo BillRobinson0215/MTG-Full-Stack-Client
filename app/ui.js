@@ -12,14 +12,11 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (response) {
-  $('.message').text('Welcome back, Professor.')
   $('form').trigger('reset')
   store.user = response.user
   console.log(store)
-  $('.in').hide(1000)
-  $('.out').show(1000)
-  $('.row').show(1750)
-  $('.btnRestart').show(2000)
+  $('.modal-bg').hide(750)
+  $('.collection').show()
 }
 
 const onSignInFailure = function () {
@@ -27,20 +24,30 @@ const onSignInFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  $('.message').text('Good-Bye Professor.')
-  $('form').trigger('reset')
-  $('.in').show(1000)
-  $('.out').hide()
-  $('.row').hide(1000)
-  $('.btnRestart').hide(1000)
+  $('.modal-bg').show(750)
+  $('.collection').hide()
 }
 const onSignOutFailure = function () {
   $('.message').text('Failed to sign out')
 }
 
-const onStartNewSuccess = function (response) {
-  $('.message').text('X moves first.')
-  store.game = response.user
+const onCardSearchFailure = function () {
+  $('.message').text('No cards found.')
+}
+
+const onChangePasswordSuccess = function () {
+  $('form').trigger('reset')
+  console.log('password changed')
+}
+
+const onCardSearchSuccess = function (response) {
+  const card = response
+
+  for (const field in card) {
+    $('.card').show()
+    $('.card').append('<li class="details">' + field + ': ' + card[field] + '</li>')
+  }
+  $('.card').append('<button id="addCard">Add Card</button>')
 }
 
 module.exports = {
@@ -50,5 +57,7 @@ module.exports = {
   onSignInSuccess,
   onSignOutFailure,
   onSignOutSuccess,
-  onStartNewSuccess
+  onCardSearchSuccess,
+  onCardSearchFailure,
+  onChangePasswordSuccess
 }

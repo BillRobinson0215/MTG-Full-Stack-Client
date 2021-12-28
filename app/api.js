@@ -1,6 +1,5 @@
 'use strict'
 const store = require('./store')
-const appUi = require('./ui.js')
 const config = require('./config.js')
 
 const signUp = function (data) {
@@ -35,7 +34,8 @@ const changePassword = function (data) {
     url: config.apiUrl + '/change-password',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data
   })
 }
 
@@ -54,12 +54,13 @@ const showCollection = function (data) {
     data
   })
 }
-
-const updateCollection = function (data) {
+// '/collection/:id/:cardId'
+const updateCollection = function (collectionId, cardId) {
+  console.log(collectionId)
+  console.log(cardId)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/collection/:id/:cardId',
-    data
+    url: config.apiUrl + '/collection/' + collectionId._id + '/' + cardId
   })
 }
 
@@ -67,6 +68,14 @@ const deleteCollection = function (data) {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/collection/delete/:id',
+    data
+  })
+}
+
+const cardSearch = function (data) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/cards/' +
     data
   })
 }
@@ -79,5 +88,6 @@ module.exports = {
   createCollection,
   showCollection,
   updateCollection,
-  deleteCollection
+  deleteCollection,
+  cardSearch
 }
