@@ -8,7 +8,7 @@ MTG Full-Stack-Project
 ### Documentation Requirements
 1. [√]  Create 2 Github repos (one for your front-end and one for your back-end)
 2. [√] Front end README.md must include wireframes and user stories.
-3. []  Back end README.md must include link or visual of Entity Relationship Diagram (ERD).
+3. [√]  Back end README.md must include link or visual of Entity Relationship Diagram (ERD).
 4. [√]  Both README.md must include an explanation of the app.
 5. [√]  Both README.md must include a link the deployed application.
 
