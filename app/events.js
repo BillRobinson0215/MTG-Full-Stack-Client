@@ -2,9 +2,11 @@
 const mtgApi = require('./api.js')
 const getFormFields = require('../lib/get-form-fields.js')
 const appUi = require('./ui.js')
-const store = require('./store')
+// const store = require('./store')
+// const cardNames = []
 let cardId = null
 let collectionId = null
+let cardName = null
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -18,6 +20,13 @@ const onSignUp = function (event) {
     .catch(appUi.onSignUpFailure)
 }
 
+// const promiseName = new Promise((resolve, reject) => {
+//   for (const card of collection) {
+//     mtgApi.cardSearchId(card).then((card) => {
+//       cardNames.push(card.cards.name)
+//     })
+//   }
+// })
 const onSignIn = function (event) {
   event.preventDefault()
   const form = event.target
@@ -27,14 +36,12 @@ const onSignIn = function (event) {
   mtgApi
     .signIn(authData)
     .then((response) => {
-      console.log(response.collections)
-      collectionId = response.collections._id
-      console.log(collectionId)
+      collectionId = response.cardCollection
       return response
     })
     .then(appUi.onSignInSuccess)
-    .then((res) => {
-      console.log(store)
+    .then(() => {
+      appUi.populateCollection(collectionId)
     })
     .catch(appUi.onSignInFailure)
 }
@@ -74,6 +81,7 @@ const onCardSearch = function (event) {
         Rarity: card.cards.rarity
       }
       cardId = card.cards._id
+      cardName = card.cards.name
       return cardForm
     })
     .then((cardForm) => {
@@ -85,10 +93,10 @@ const onCardSearch = function (event) {
 
 const onAddCard = function (event) {
   event.preventDefault()
-  console.log('this button works')
-
   mtgApi
-    .updateCollection(collectionId, cardId)
+    .updateCollection(collectionId[0]._id, cardId)
+  $('.collection').append('<li class="collection-details">' + cardName + '<button class="removeCard" id="' + cardId + '">Remove Card</button>' + '</li>')
+  appUi.removeCardActivate()
 }
 
 const onChangePasswordShow = function (event) {
@@ -113,6 +121,23 @@ const onDone = function (event) {
   $('.modal-cp').hide(750)
   $('.collection').show(200)
 }
+
+// const onDeleteCard = function (event) {
+//   // let deleteId = null
+//   // const card = event.parent.text()
+//   console.log('this button works')
+//   // console.log(card)
+//   // mtgApi
+//   // .cardSearch(card)
+//   // .then(() => {
+//   //   deleteId = {
+//   //     card: card.cards._id
+//   //   }
+//   //   return deleteId
+//   // })
+//   // .then(() =>
+//   // mtgApi.deleteCard(collectionId, deleteId))
+// }
 
 module.exports = {
   onSignUp,

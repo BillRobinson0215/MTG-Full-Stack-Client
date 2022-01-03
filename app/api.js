@@ -56,11 +56,9 @@ const showCollection = function (data) {
 }
 // '/collection/:id/:cardId'
 const updateCollection = function (collectionId, cardId) {
-  console.log(collectionId)
-  console.log(cardId)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/collection/' + collectionId._id + '/' + cardId
+    url: config.apiUrl + '/collection/' + collectionId + '/' + cardId
   })
 }
 
@@ -80,6 +78,20 @@ const cardSearch = function (data) {
   })
 }
 
+const cardSearchId = function (data) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/cardsid/' + data
+  })
+}
+
+const deleteCard = function (id, cardId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/cards/delete/' + id + '/' + cardId
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -89,5 +101,7 @@ module.exports = {
   showCollection,
   updateCollection,
   deleteCollection,
-  cardSearch
+  cardSearch,
+  cardSearchId,
+  deleteCard
 }
