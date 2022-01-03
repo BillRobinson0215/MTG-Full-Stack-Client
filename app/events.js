@@ -40,9 +40,6 @@ const onSignIn = function (event) {
       return response
     })
     .then(appUi.onSignInSuccess)
-    .then(() => {
-      appUi.populateCollection(collectionId)
-    })
     .catch(appUi.onSignInFailure)
 }
 

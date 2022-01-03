@@ -15,7 +15,9 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = async function (response) {
+  console.log('sign-in success')
   const collection = response.cardCollection[0].cards
+  console.log(collection)
   collectionId = response.cardCollection[0]._id
   $('.collection').empty()
   $('.collection').prepend('<h4 class="collection-header">Your Collection</h4>')
@@ -52,6 +54,7 @@ const populateCollection = function (cardArray) {
   for (const card of cardArray) {
     $('.collection').append('<li class="collection-details">' + card.name + '<button class="removeCard" id="' + card.id + '">Remove Card</button>' + '</li>')
   }
+  console.log(cardArray)
 }
 
 const removeCardActivate = function () {
