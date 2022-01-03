@@ -3,7 +3,6 @@
 $font-family: 'Montserrat';
 $font-color: rgb(255, 213, 0);
 
-
 body {
     font-family: $font-family;
     color: $font-color;
@@ -32,6 +31,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(46, 46, 46);
+    zoom: 125%;
 }
 
 input {
