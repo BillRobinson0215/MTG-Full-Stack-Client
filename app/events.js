@@ -90,6 +90,7 @@ const onCardSearch = function (event) {
 
 const onAddCard = function (event) {
   event.preventDefault()
+  $('.message').empty()
   $('.message').text('Card Added to Collection.')
   mtgApi
     .updateCollection(collectionId[0]._id, cardId)

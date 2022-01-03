@@ -5,11 +5,13 @@ const mtgEvents = require('./events.js')
 let collectionId = null
 
 const onSignUpSuccess = function () {
+  $('.message').empty()
   $('.message').text('New account created')
   $('form').trigger('reset')
   console.log('success')
 }
 const onSignUpFailure = function () {
+  $('.message').empty()
   $('.message').text('Invalid entry.')
   console.log('fail')
 }
@@ -26,6 +28,7 @@ const onSignInSuccess = async function (response) {
   $('.modal-bg').hide(750)
   $('.collection-list').show()
   $('.collection').show()
+  $('.message').empty()
   $('.message').text('Welcome')
   populateCollection(cardArray)
   removeCardActivate()
@@ -47,6 +50,7 @@ const refreshCollection = async function (collection) {
 }
 
 const onSignInFailure = function () {
+  $('.message').empty()
   $('.message').text('Access Denied.')
 }
 
@@ -91,23 +95,28 @@ const onSignOutSuccess = function () {
   $('.modal-bg').show(750)
   $('.collection').hide()
   $('.card').hide()
+  $('.message').empty()
   $('.message').text('Good-Bye.')
 }
 const onSignOutFailure = function () {
+  $('.message').empty()
   $('.message').text('Failed to sign out')
 }
 
 const onCardSearchFailure = function () {
+  $('.message').empty()
   $('.message').text('No cards found.')
 }
 
 const onChangePasswordSuccess = function () {
   $('form').trigger('reset')
+  $('.message').empty()
   $('.message').text('Password Changed')
 }
 
 const onChangePasswordFailure = function () {
   $('form').trigger('reset')
+  $('.message').empty()
   $('.message').text('Change Password Failed.')
 }
 
@@ -131,10 +140,12 @@ const onDeleteCard = function (event) {
 }
 
 const onDeleteCardSuccess = function () {
+  $('.message').empty()
   $('.message').text('Card Deleted.')
 }
 
 const onDeleteCardFailure = function () {
+  $('.message').empty()
   $('.message').text('No cards found.')
 }
 
