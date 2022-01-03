@@ -9,8 +9,8 @@ MTG Full-Stack-Project
 1. [√]  Create 2 Github repos (one for your front-end and one for your back-end)
 2. [√] Front end README.md must include wireframes and user stories.
 3. []  Back end README.md must include link or visual of Entity Relationship Diagram (ERD).
-4. []  Both README.md must include an explanation of the app.
-5. []  Both README.md must include a link the deployed application.
+4. [√]  Both README.md must include an explanation of the app.
+5. [√]  Both README.md must include a link the deployed application.
 
 ### Auth Specifications 
 1.  [√] User must be able to sign up
@@ -19,7 +19,7 @@ MTG Full-Stack-Project
 4.  [√] Signed in user user must be able to start a tic tac toe game
 5.  [√] Signup and Signin must only be available to not signed in users.
 6.  [√] Logout and Change password must only be available to signed in users.
-7.  [] Give feedback to the user after each action's success or failure.
+7.  [√] Give feedback to the user after each action's success or failure.
 8.  [√] All forms must clear after submit success and user sign-out
 
 ### CRUD Specifications 
@@ -28,7 +28,7 @@ MTG Full-Stack-Project
 3. [√]  User must be able to delete a resource
 4. [√]  User must be able to view a single or multiple resource(s)
 5. [√]  All resource actions that change data must only be available to a signed in user.
-6. []  Give feedback to the user after each action's success or failure.
+6. [√]  Give feedback to the user after each action's success or failure.
 7. [√]  All forms must clear after submit success and user sign-out
 
 ### API Requirements
