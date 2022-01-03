@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>TCG Collector</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- <link rel="stylesheet" href="/styles/index.css"> -->
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+          <nav class="out-nav" style="float: right;">
+            <form class="out" id="sign-out-form">
+              <button class="navbutton">Sign Out</button>
+            </form>
+            <button id="cp-show">Change Password</button>
+            <div class="modal-cp" style="display: none;">
+              <div class="cp-modal">
+              <form class="in" id="change-password-form">
+                <h3 id="title">Change Password</h3>
+                <input class="input" type="password" name="credentials[old]" placeholder="Old Password" />
+                <input class="input" type="password" name="credentials[new]" placeholder="New Password" />
+                <button class="navbutton" id="change-password">Change Password</button>
+                <button id="cp-done">Done</button>
+              </form>
+              </div>
+            </div>
+          </nav>
+      <h1 class="heading">TCG Collector</h1>
+
+     <div class="modal-bg">
+        <div class="modal">
+          <form class="in" id="sign-up-form">
+            <h3 class="title">Sign Up</h3>
+            <input class="input"  type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+            <input class="input" type="password" name="credentials[password]" placeholder="Create Password" />
+            <input class="input" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+            <button class="navbutton">Sign-Up</button>
+          </form>
+            <form class="in" id="sign-in-form">
+      <h3 class="title">Sign In</h3>
+      <input class="input" type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+      <input class="input" type="password" name="credentials[password]" placeholder="Password" />
+      <button class="navbutton">Sign-in</button>
+    </form>
+  </div>
+</div>
+      <div id="cardSearch">
+        <form>
+          <h3 class="title">Card Search</h3>
+          <input id="cardName" type="name" placeholder="'Squee, Goblin Nabob'"/>
+          <button>Search Card</button>
+        </form>
+      <div>
+        <p class="card-list">Search Result<ul class="card" style="display: none;"></ul></p>
+        </div>
+        <div>
+        <p class="collection-list" style="display: none;"><ol class="collection" style="display: none;">Your Collection</ol></p>
+        </div>
+      </div>
+      <div class="message"></div>
+    </body>
+</html>
