@@ -2,11 +2,11 @@ MTG Full-Stack-Project
 
 ### Deployment Requirements
 1.  [√]  Host on your public Github page, not Github Enterprise.
-2.  []  Deploy client application on GH pages.
+2.  [√]  Deploy client application on GH pages.
 3.  [√]  Deploy server application on Heroku.
 
 ### Documentation Requirements
-1. []  Create 2 Github repos (one for your front-end and one for your back-end)
+1. [√]  Create 2 Github repos (one for your front-end and one for your back-end)
 2. [√] Front end README.md must include wireframes and user stories.
 3. []  Back end README.md must include link or visual of Entity Relationship Diagram (ERD).
 4. []  Both README.md must include an explanation of the app.
@@ -25,11 +25,11 @@ MTG Full-Stack-Project
 ### CRUD Specifications 
 1. [√]  User must be able to create a new resource
 2. [√]  User must be able to update a resource
-3. []  User must be able to delete a resource
+3. [√]  User must be able to delete a resource
 4. [√]  User must be able to view a single or multiple resource(s)
 5. [√]  All resource actions that change data must only be available to a signed in user.
 6. []  Give feedback to the user after each action's success or failure.
-*** 7. []  All forms must clear after submit success and user sign-out ***
+7. [√]  All forms must clear after submit success and user sign-out
 
 ### API Requirements
 

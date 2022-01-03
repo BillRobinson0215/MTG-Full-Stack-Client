@@ -5,7 +5,7 @@ const mtgEvents = require('./events.js')
 let collectionId = null
 
 const onSignUpSuccess = function () {
-  $('.message').text('New account created, Professor.')
+  $('.message').text('New account created')
   $('form').trigger('reset')
   console.log('success')
 }
@@ -15,7 +15,6 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = async function (response) {
-  console.log('sign-in success')
   const collection = response.cardCollection[0].cards
   console.log(collection)
   collectionId = response.cardCollection[0]._id
@@ -27,6 +26,7 @@ const onSignInSuccess = async function (response) {
   $('.modal-bg').hide(750)
   $('.collection-list').show()
   $('.collection').show()
+  $('.message').text('Welcome')
   populateCollection(cardArray)
   removeCardActivate()
 }
@@ -91,6 +91,7 @@ const onSignOutSuccess = function () {
   $('.modal-bg').show(750)
   $('.collection').hide()
   $('.card').hide()
+  $('.message').text('Good-Bye.')
 }
 const onSignOutFailure = function () {
   $('.message').text('Failed to sign out')
@@ -102,7 +103,12 @@ const onCardSearchFailure = function () {
 
 const onChangePasswordSuccess = function () {
   $('form').trigger('reset')
-  console.log('password changed')
+  $('.message').text('Password Changed')
+}
+
+const onChangePasswordFailure = function () {
+  $('form').trigger('reset')
+  $('.message').text('Change Password Failed.')
 }
 
 const onCardSearchSuccess = function (response) {
@@ -142,6 +148,7 @@ module.exports = {
   onCardSearchSuccess,
   onCardSearchFailure,
   onChangePasswordSuccess,
+  onChangePasswordFailure,
   populateCollection,
   removeCardActivate
 }

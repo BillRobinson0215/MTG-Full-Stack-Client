@@ -90,6 +90,7 @@ const onCardSearch = function (event) {
 
 const onAddCard = function (event) {
   event.preventDefault()
+  $('.message').text('Card Added to Collection.')
   mtgApi
     .updateCollection(collectionId[0]._id, cardId)
   $('.collection').append('<li class="collection-details">' + cardName + '<button class="removeCard" id="' + cardId + '">Remove Card</button>' + '</li>')
@@ -109,8 +110,8 @@ const onChangePassword = function (event) {
 
   mtgApi
     .changePassword(authData)
-    // .then(appUi.onSignUpSuccess)
-    // .catch(appUi.onSignUpFailure)
+    .then(appUi.onChangePasswordSuccess)
+    .catch(appUi.onChangePasswordFailure)
 }
 
 const onDone = function (event) {
